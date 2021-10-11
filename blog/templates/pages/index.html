@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      body{
+          position: relative;
+  } 
+  </style>
+    <title>Welcome </title>
+  </head>
+  <body data-spy="scroll" style="background-color: #272727;" data-target=".navbar" data-offset="150">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top ml-5 mr-5 mt-4">
+      <div class="container-fluid">
+        <a href="/" class="navbar-brand">
+          <i class="fas fa-code"></i>&nbsp;<b>Ahmet Yigit</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#Home" class="nav-link active">Home</a></li>
+            <li class="nav-item"></li><a href="#Cv" class="nav-link">Who Am I</a></li>
+            <li class="nav-item"></li><a href="#Project" class="nav-link">Projects</a></li>
+            <li class="nav-item"></li><a href="#Contact" class="nav-link">Freelancer Work</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <br><br><br>
+    <header>
+      <div id="Home" class="jumbotron text-white" style="background-color: #272727;">
+        <div class="row">
+          <div id="Home" class="col-md-6 mt-5">
+            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEkvES8Tg1g7A/profile-displayphoto-shrink_800_800/0/1621778951958?e=1638403200&v=beta&t=tUMxueRUUzqwxWgRnGYkPzwWehDX5E5lUlA0PaAuHUw"
+             style="width: 360px; height: 380px;"
+             class="img img-thumbnail float-right bg-dark rounded-circle mt-5">
+          </div>
+          <div class="col-md-6 mt-5 justify-content-start">
+            <br><br>
+            <h1 class="mt-5 font-weight-bold">Ahmet Yiğit</h1>
+            <h3 class="mt-2 lead">Full-Stack Developer</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+               A tenetur iste earum sed, est vero culpa tempora maxime dolores <br>
+               facilis! Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
+                Optio blanditiis expedita harum ipsa iusto vero unde odit doloremque<br>
+                 pariatur possimus.</p>
+            <button type="button" class="btn btn-outline-primary"><a href="/cv" class="text-white">Download CV</a></button>
+            <button type="button" class="btn btn-outline-primary"> <a href="/projects" class="text-white">Show Projects</a></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="slider2"class="carousel slide my-5 carousel-fade" data-ride="carousel">
+      <ol class="carousel-indicators">
+          <li data-target="#slider2" data-slide-to="0" class="active"></li>
+          <li data-target="#slider2" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner" >
+        <div class="carousel-item active">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEUdv3P///8evnRIx4gSwG4Nvm+U1reB1al3z58OvW960qU5wXwAumv//v/L6978//+35tNNxI0Au2cAtmgWwGpGxYii27++59LU7+Hk+O7z//j2//6R1rnM7t7v+Paa3L5eypYauHK66tAuvn5nz6GO17Bnz5uB1ag0voCv4cuQ0q8uxHpEwn/a8OTe7+hy0qG5cr/qAAACkElEQVR4nO3c7VLaQBhA4WTZRZdsjA1QQBogWqxVWu7/7qrTH6V8LEkYeNl4np8OzOzxDdkFHKMIAAAAAAAAAAAAAAAAAFCdimxkjdbO9fs2UrukF3iywSCPhr2vo/HkYZrtE8cjJ73I5qzOh9+KWfwhzdJ4v2ALlc5X88mBqg3pfaCFtr8osvjQ3MIvNPli/L74NGtroXsrqowv0EL1vjXcTCvmBVloVflYvS/IwqdJXOHlF2yhipKHOhMMr9A+zarcQMMtNKrCHh9yoekXNScYWqGbxwePn60otIu6eWEVKl1O2l1oXLfyUS3Mwqicpu0u1N36eWEVulm7C5X5Xus4Gl5hZEaNRhhOobbV3hOmO0IptIsKdXt/GspnbW7u3yk+NpLpaPk87GxLpJdeUV74A7N4tizzgTHSC23syF6RxoUyYX+En0z9e8Wds9JLPI0d+q/RiQv38vzr2K20F3pgZJ59J5psFsiO4GFuvSO8z6UXeDLT87437GrpBZ7syAxvgn8ZHiv80frC9s+QwuujtTabrFt776Xr3DRixY56+qX7v9efvsD08bXb0JvQcd1+2a3wFXovYa+O0PW9p/As0rijZYZ4qcKYQgoppJBCCimkkEIKKaSQQgoppJDCuoXn+qxNqFCv7raMfRXZr+2Hb/jt/QVIFRrjtqy9f+Dd2374P/ntVRbuaP69he15n0nhxVBIIYXyKKSQQnkUUkihPAoppFAehRRSKI9CCimURyGFFMqjkEIK5VFIIYXyKKSQQnkUUkihPAoppFAehRRSKI9CCimURyGFFMr7BIVr7zqXhwuNv3CoruUfEpYvyWErzxys8jwxScrLJQAAAAAAAAAAAAAAAAAAAAAAzu8PHHJPKzEvqrQAAAAASUVORK5CYII=" style="width: 150px;height: 150px;"  class="d-block mx-auto">
+            <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="carousel-item" >
+          <img src="https://camo.githubusercontent.com/c34d362e0e084f01b17fbef1b5332e97e40c75caceb85a1e705fbe5fdfe6d881/687474703a2f2f692e737461636b2e696d6775722e636f6d2f36774c69492e6a7067" style="width: 150px;height: 150px;" class="d-block mx-auto" >
+          <div class="carousel-caption">
+          </div>
+        </div>
+    
+      </div>
+    
+    <a href="#slider2" class="carousel-control-prev" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>   
+    <a href="#slider2" class="carousel-control-next" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+    <main class="row text-white">
+      <div class="col-md-6 ml-5">
+        <div id="Cv" class="card shadow-lg" style="background-color: #383838;border-color: black;
+        width: 900px;">
+          <div class="card-body">
+            <h3 class="card-title  text-center font-italic">Who Am I</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate obcaecati nemo tempore harum culpa ea vel incidunt accusantium fugit at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officia nulla praesentium vitae voluptatum natus, sit asperiores molestiae ipsam laborum nobis neque corrupti incidunt rerum a ipsa, quo nisi optio. Hic nemo excepturi eligendi aliquid? Modi, optio! Totam, dolorum libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore tenetur quis similique ducimus, aliquam sed itaque non nesciunt deserunt voluptatem. Veritatis, et harum. Facere impedit neque laborum error facilis nesciunt praesentium sed voluptates exercitationem rerum hic voluptatum, ipsa eligendi itaque earum expedita obcaecati fugiat minus nobis autem molestias harum qui?</p>
+            <button type="button" class="btn btn-outline-secondary">Read More</button>
+          </div>
+        </div>
+      
+      <br><br>
+      <div>
+        <div class="card shadow-lg" style="background-color:#383838;border-color: black;
+        width: 900px;">
+        <div class="card-body">
+          <h3 class="card-title text-center font-italic">Github Activity</h3>
+          <img style="padding-left: 180px;" src="https://github-readme-stats.vercel.app/api?username=Mens1s&&show_icons=true&title_color=ffffff&icon_color=bb2acf&text_color=daf7dc&bg_color=151515">
+
+        </div>
+        </div>
+      </div>
+      <br><br>
+      <div>
+        <div class="card shadow-lg"style="background-color: #383838;border-color: black;
+        width: 900px;">
+        <div id="Project" class="card-body">
+          <h3 class="card-title text-center text-bold font-italic">My Freelancer Accounts</h3>
+          <ul>
+            <li><a target="_blank" href="https://www.fiverr.com/mensiis" style="color: aquamarine;">Fiverr</a>
+            
+            <p>I serviced <b>14</b> different customer since 1 year.
+              <br>
+              <span class="text-muted">I have been creating game, web-page, data-mining tools etc.</span>
+              <ul>
+                <li>raj0np
+                  <p class="text-muted">he did the job too fast.
+                  </p>
+                </li>
+                <li>pit3rp3n
+                  <p class="text-muted">Nice done! Recomended.
+                  </p>
+                </li>
+                <li>pirostd
+                  <p class="text-muted">Outstanding job.
+                  </p>
+                </li>
+                <li>qasimbddn
+                  <p class="text-muted">Good work.
+                  </p>
+                </li>
+                <li>mastercraft802
+                  <p class="text-muted">fast delivery.
+                  </p>
+                </li><li>falishtinski
+                  <p class="text-muted">Great and fast job !
+                  </p>
+                </li>
+
+                <li>laqdour
+                  <p class="text-muted">Good experience as always.
+                  </p>
+                </li>
+              </ul>
+            </p>
+            </li>
+            <li><a target="_blank" href="https://www.freelancer.com/u/mensiis" style="color: aquamarine;">Freelancer</a></li>
+            <p>I serviced <b>3</b> different customer since half year.
+              <br>
+              <span class="text-muted">I have been creating game, web-page, data-mining tools etc.</span>
+              <ul>
+                <li>Daisy N.
+                  <p class="text-muted">I Recomended him to everybody.
+                  </p>
+                </li>
+                <li>Huan P.
+                  <p class="text-muted">Fast and clear delivery.
+                  </p>
+                </li><li>Ritikgautamtechy
+                  <p class="text-muted">Awesome game awesome developer.
+                  </p>
+                </li>
+              </ul>
+            </p>
+            </li>
+          </ul>
+          <h5 class="card-footer text-muted">17 Projects have already done!</h5>
+        </div>
+
+        </div>
+      </div>
+    </div>
+      <div class="card md-6 ml-5 shadow-lg" style="background-color: #383838;border-color: black;">
+        <div class="card-body">
+          <h3 class="card-title text-center">My last Projects</h3>
+          <p class="card-text"><ul>
+            <li><a href="https://github.com/Mens1s/Applications/tree/main/atm_projects(Live%20Currency)/AtmProjectV2" style="color: bisque;"> Atm Project</a></li>
+            <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Facilis quas repellendus<br> praesentium beatae quae doloribus odio perspiciatis, excepturi <br>repudiandae labore magnam distinctio mollitia! Tempora non<br> quaerat repellat sint modi earum aliquid vitae doloremque reprehenderit tenetur?<br> Dolor magnam eius reiciendis labore!</p><br>
+            <li><a href="https://github.com/Mens1s/Applications/tree/main/calculator(gui)" style="color: bisque;"> Calculator</a></li>
+            <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Facilis quas repellendus<br> praesentium beatae quae doloribus odio perspiciatis, excepturi <br>repudiandae labore magnam distinctio mollitia! Tempora non<br> quaerat repellat sint modi earum aliquid vitae doloremque reprehenderit tenetur?<br> Dolor magnam eius reiciendis labore!</p><br>
+            <br>
+            <li><a href="https://github.com/Mens1s/Applications/tree/main/typing%20speed" style="color: bisque;"> Typing Speed</a></li>
+            <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Facilis quas repellendus<br> praesentium beatae quae doloribus odio perspiciatis, excepturi <br>repudiandae labore magnam distinctio mollitia! Tempora non<br> quaerat repellat sint modi earum aliquid vitae doloremque reprehenderit tenetur?<br> Dolor magnam eius reiciendis labore!</p><br>
+            <br>
+            <li><a href="https://github.com/Mens1s/Frontend_Development/tree/main/blogTemplate" style="color: bisque;"> Blog Template</a></li>
+            <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Facilis quas repellendus<br> praesentium beatae quae doloribus odio perspiciatis, excepturi <br>repudiandae labore magnam distinctio mollitia! Tempora non<br> quaerat repellat sint modi earum aliquid vitae doloremque reprehenderit tenetur?<br> Dolor magnam eius reiciendis labore!</p><br>
+            <br>
+            <li><a href="https://github.com/Mens1s/Frontend_Development/tree/main/front_endDevelopment/eshop" style="color: bisque;"> E Shop</a></li>
+            <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Facilis quas repellendus<br> praesentium beatae quae doloribus odio perspiciatis, excepturi <br>repudiandae labore magnam distinctio mollitia! Tempora non<br> quaerat repellat sint modi earum aliquid vitae doloremque reprehenderit tenetur?<br> Dolor magnam eius reiciendis labore!</p><br>
+            <br>
+            <li><a href="https://github.com/Mens1s/Frontend_Development/tree/main/front_endDevelopment/googlehm1" style="color: bisque;"> Google</a></li>
+            <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Facilis quas repellendus<br> praesentium beatae quae doloribus odio perspiciatis, excepturi <br>repudiandae labore magnam distinctio mollitia! Tempora non<br> quaerat repellat sint modi earum aliquid vitae doloremque reprehenderit tenetur?<br> Dolor magnam eius reiciendis labore!</p><br>
+          </ul></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/0bcfa251b4.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
