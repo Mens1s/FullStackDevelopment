@@ -1,3 +1,4 @@
+from django.http.request import UnreadablePostError
 import requests
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
@@ -10,7 +11,6 @@ def projects(request):
 
 def atmproject(request):
     if request.POST:
-        print(1)
         id=request.POST["id"]
         password=request.POST["password"]
         response = bank.user(request,id,password)
@@ -21,12 +21,14 @@ def atmproject(request):
                     'value' : value}
         return render(request, 'pages/atmproject.html', context)
 
-def atmproject2(request):
-    print(1)
-    return render(request, 'pages/atmproject2.html')
-
 def atmprojectuser(request):
-    return render(request, "pages/atmprojectuser.html")
+    name = request.user.first_name
+    surname = request.user.last_name
+    money = request.user.money
+    context = {'name':name,
+                'surname':surname,
+                'money':money,}
+    return render(request, "pages/atmprojectuser.html",context)
 
 def atmprojectregister(request):
     if request.POST:
@@ -58,11 +60,10 @@ class bank():
 
         if user is not None:
             auth.login(request, user)
-            return redirect('atmproject2')
+            return redirect('atmprojectuser')
         else:
             return redirect('atmproject')
     def register(request,id,password,name,surname):
-        test = password,name,surname 
         if User.objects.filter(username = id).exists():
             return redirect('atmprojectregister')
         else:           
