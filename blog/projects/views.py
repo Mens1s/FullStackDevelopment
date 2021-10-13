@@ -21,6 +21,7 @@ def atmproject(request):
                     'value' : value}
         return render(request, 'pages/atmproject.html', context)
 
+# Create nnew page
 def atmprojectuser(request):
     name = request.user.first_name
     surname = request.user.last_name
