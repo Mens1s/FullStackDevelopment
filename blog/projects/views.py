@@ -4,8 +4,9 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
-
+from .models import Customer
 # Create your views here.
+
 def projects(request):
     return render(request, 'pages/projects.html')
 
@@ -22,12 +23,12 @@ def atmproject(request):
         return render(request, 'pages/atmproject.html', context)
 
 def atmprojectuser(request):
-    name = request.user.first_name
-    surname = request.user.last_name
-    money = request.user.money
+    name = Customer.first_name
+    surname = Customer.last_name
+    money = Customer.balance
     context = {'name':name,
                 'surname':surname,
-                'money':money,}
+                'balance':money,}
     return render(request, "pages/atmprojectuser.html",context)
 
 def atmprojectregister(request):
@@ -37,6 +38,7 @@ def atmprojectregister(request):
         name=request.POST["name"]
         surname=request.POST["surname"]
         response = bank.register(request,id,password,name,surname)
+        
         return response
     else:
         currency,value = bank.currency()
@@ -57,16 +59,20 @@ class bank():
         return unit,value
     def user(request,id,password):
         user = auth.authenticate(username=id,password=password)
-
+        
         if user is not None:
             auth.login(request, user)
             return redirect('atmprojectuser')
         else:
+            messages.add_message(request, messages.ERROR, "Id or Password is wrong!")
             return redirect('atmproject')
     def register(request,id,password,name,surname):
-        if User.objects.filter(username = id).exists():
+        if Customer.objects.filter(username = id).exists():
+            messages.add_message(request, messages.ERROR, "Id is still using!")
             return redirect('atmprojectregister')
-        else:           
-            user = User.objects.create(username=id,password=password,first_name=name,last_name=surname)
+        else:   
+            user = Customer.objects.create(username=id,password=password,first_name=name,last_name=surname,balance="0")   
+            userAdmin = User.objects.create(username=id,password=password)    
+            userAdmin.save()
             user.save()
             return redirect('atmprojectuser')
