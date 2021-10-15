@@ -13,6 +13,9 @@ def projects(request):
 def atmproject(request):
     if request.POST:
         id=request.POST["id"]
+        with open("log.txt", "w") as log:
+            log.write(id)
+            log.close()
         password=request.POST["password"]
         response = bank.user(request,id,password)
         return response
@@ -23,10 +26,37 @@ def atmproject(request):
         return render(request, 'pages/atmproject.html', context)
 
 # Create nnew page
-def atmprojectuser(request):
-    name = Customer.first_name
-    surname = Customer.last_name
-    money = Customer.balance
+def atmprojectuser(request): 
+    with open("log.txt","r") as log:
+        id = log.read()
+    customer = Customer.objects.get(username=id)
+    if request.POST:
+        money = request.POST["money"]
+        type = request.POST["type"]
+        confirm = request.POST["confirm"]
+
+        if str(type).lower() == "withdraw":
+            if int(money) > int(customer.balance):
+                messages.add_message(request, messages.ERROR, "Your money doesn't enough!")
+            else:
+                if str(confirm).lower() == "confirm":
+                    customer.balance -= int(money)
+                    customer.save()
+                    messages.add_message(request, messages.SUCCESS, "Your order have done succesfuly.")
+                else:
+                    messages.add_message(request, messages.ERROR, "Please control 'confirm'. ")
+        else:
+            if str(confirm).lower() == "confirm":
+                customer.balance += int(money) 
+                customer.save()  
+                messages.add_message(request, messages.SUCCESS, "Your order have done succesfuly.")
+
+            else:
+                messages.add_message(request, messages.ERROR, "Please control 'confirm' .")
+    
+    name = customer.first_name
+    surname = customer.last_name
+    money = str(customer.balance)
     context = {'name':name,
                 'surname':surname,
                 'balance':money,}
@@ -35,11 +65,13 @@ def atmprojectuser(request):
 def atmprojectregister(request):
     if request.POST:
         id=request.POST["id"]
+        with open("log.txt","w") as log:
+            log.write(id)
+            log.close()
         password=request.POST["password"]
         name=request.POST["name"]
         surname=request.POST["surname"]
         response = bank.register(request,id,password,name,surname)
-        
         return response
     else:
         currency,value = bank.currency()

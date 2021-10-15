@@ -10,18 +10,80 @@
     <title>Mens1s Bank</title>
   </head>
   <body style="background-color: #39A2DB;">
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top center" style="background-color: #39A2DB;">
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top" style="background-color: #39A2DB;">
         <a href="" class="ml-5 navbar-brand center">Mens1s</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#target">
             <!-- burdaki tager biri collapse navbar colloapse id ile aynı olmak zorunda -->
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="target">
-        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/projects/atmproject">ATM PROJECT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="https://github.com/Mens1s/Applications" tabindex="-1" aria-disabled="true">Code</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            {% if name %}
+            <li class="nav-item active"><span class=" text-white"> Welcome Mr. {{name}} &nbsp;</span></li>
+            {% endif %}
+            {% if surname %}
+            <li class="nav-item active"> <span class=" text-white">{{surname}}&nbsp;&nbsp;</span></li>
+            {% endif %}
+            {% if balance %}
+            <li class="nav-item active"><span class=" text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Balance : {{balance}} TRY</span></li>
+            {% endif %}
+          </ul>
+        </div>      
     </nav>
+    <br><br><br><br>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card" style="background-color: #2a8fc5;">
+          <div class="card-title">Transactions</div>
+          <ul class="text-white">
+            <li><a href="" class="text-white">Deposit money</a></li>
+            <li><a href="" class="text-white">Withdraw money</a></li>
+            <li><a href="" class="text-white">Take loan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md4">
+        <form action="{% url 'atmprojectuser' %}" method="POST">
+          {% csrf_token %}
+          <div style="width: 450px;"   class="form-group">
+            <label for="money">Money</label>
+            <input type="number" name="money" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="type">Withdraw or Deposit Please type</label>
+            <input type="text" name="type" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm">Please type confirm</label>
+            <input type="text" name="confirm" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Confirm</button>
+          {% if messages %}
+            <ul class="alert alert-danger" style="list-style: none;">
+          {% for message in messages %}
+          <li>{% if message.tags %}  {% endif %} {{ message }}</li>
+          {% endfor %}
+          </ul>
+{% endif %}
+        </form>
+      </div>
+      
+    </div>
 
     <footer id="Contact" class="py-5  text-white text-center" style="background-color: #39A2DB;">
-        Mensis Github.com/Mens1s
+        Mensis <a href="github.com/mens1s" class="text-white">Github.com/Mens1s</a> Github.com/Mens1s
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

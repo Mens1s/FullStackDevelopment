@@ -9,11 +9,10 @@ class Customer(models.Model):
     balance = models.IntegerField(verbose_name='Balance : ', null=True)
 
     def __str__(self):
-        return self.name
-
-    def one (self):
-        return self.first_name
-    def two (self):
-        return self.last_name
-    def three (self):
-        return self.balance
+        return str(self.username)
+    def __str__(self):
+        return str(self.first_name)
+    def __str__(self):
+        return str(self.last_name)
+    def __str__(self):
+        return str(self.balance)
